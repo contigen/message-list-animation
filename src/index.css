@@ -4,7 +4,8 @@
 
 @layer base {
   body {
-    font-family: 'Geist Variable'
+    font-family: 'Geist Variable';
+    @apply m-4
   }
 
   h1,
@@ -20,4 +21,57 @@
     @apply text-3xl font-bold;
   }
 
+}
+
+@layer utilities {
+  .quote {
+    max-width: 75ch;
+    word-wrap: break-word;
+    margin-bottom: 12px;
+    line-height: 1.5rem;
+    position: relative;
+    border-radius: 1.5rem;
+    mix-blend-mode: difference;
+
+    &:before,
+    &:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 1rem;
+    }
+  }
+
+  .me {
+    &:before {
+      right: -7px;
+      width: 20px;
+      background-color: #3b82f6;
+      border-bottom-left-radius: 1rem;
+    }
+
+    &:after {
+      right: -26px;
+      width: 26px;
+      background-color: white;
+      border-bottom-left-radius: 10px;
+    }
+  }
+
+  .them {
+    &:before {
+      left: -7px;
+      width: 20px;
+      background-color: #6b7280;
+      border-bottom-right-radius: 1rem;
+    }
+
+    &:after {
+      left: -26px;
+      width: 26px;
+      background-color: white;
+      border-bottom-right-radius: 10px;
+    }
+  }
 }
