@@ -1,3 +1,12 @@
+import { MessageList } from './message-list'
+
 export default function App() {
-  return <h1>Hello world!</h1>
+  return (
+    <div>
+      <h1 className='text-center'>
+        Learning how to animate a list of messages with framer motion.
+      </h1>
+      <MessageList />
+    </div>
+  )
 }
